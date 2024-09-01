@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'dev.flutter.flutter-gradle-plugin'
+}
+
+android {
+    namespace 'com.example.my_vpn_app'
+    compileSdkVersion 34
+    defaultConfig {
+        applicationId "com.example.my_vpn_app"
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode flutter.versionCode.toInteger()
+        versionName flutter.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+//    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.wireguard.android:tunnel:1.0.20230706'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.0.20"
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+//    implementation "io.flutter:flutter_embedding:1.0.0"
+}
